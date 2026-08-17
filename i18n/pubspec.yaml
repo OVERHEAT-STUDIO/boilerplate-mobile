@@ -1,0 +1,21 @@
+name: i18n
+description: Package d'internationalisation — généré par intl_utils
+version: 1.0.0
+publish_to: 'none'
+
+environment:
+  sdk: '>=3.0.0'
+  flutter: '>=3.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  intl: ^0.20.2
+  intl_utils: ^2.8.11
+
+flutter_intl:
+  enabled: true
+  class_name: I18n
+  main_locale: fr
+  output_dir: lib/src/generated
+  arb_dir: lib/src/l10n

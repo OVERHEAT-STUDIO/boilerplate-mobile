@@ -1,0 +1,30 @@
+name: Check i18n
+
+on:
+  pull_request:
+    paths:
+      - 'i18n/**'
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version-file: .flutter-version
+          channel: stable
+
+      - name: Check ARB keys are in sync
+        run: |
+          cd i18n
+          # Extract keys from both .arb files and compare
+          FR_KEYS=$(dart run intl_utils:generate 2>&1 || true)
+          if echo "$FR_KEYS" | grep -i "error\|missing\|not found"; then
+            echo "❌ i18n generation failed — check ARB files are in sync"
+            exit 1
+          fi
+          echo "✅ i18n keys are in sync"

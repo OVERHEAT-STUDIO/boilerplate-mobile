@@ -1,0 +1,57 @@
+{
+  "@@locale": "fr",
+  "_locale": "fr",
+
+  "retry": "Réessayer",
+  "close": "Fermer",
+  "maintenance": "Maintenance",
+  "continueLabel": "Continuer",
+  "cancelLabel": "Annuler",
+  "saveLabel": "Sauvegarder",
+  "settings": "Réglages",
+  "appearance": "Apparence",
+  "locale": "Langue",
+  "notifications": "Notifications",
+  "account": "Compte",
+  "feedback": "Feedback",
+  "rating": "Avis",
+  "search": "Rechercher",
+  "loading": "Chargement…",
+  "noResults": "Aucun résultat",
+  "errorOccurred": "Une erreur est survenue",
+  "errorNotFound": "Introuvable",
+  "errorApiForbidden": "Accès refusé",
+  "errorApiGenericError": "Une erreur est survenue. Veuillez réessayer.",
+  "errorApiUnknown": "Erreur inconnue ({code})",
+  "errorApiRateLimited": "Trop de requêtes. Veuillez réessayer plus tard.",
+  "errorApiMissingRequiredFields": "Champs obligatoires manquants.",
+  "errorApiInvalidToken": "Session expirée. Veuillez vous reconnecter.",
+  "errorApiVpnDetected": "Veuillez désactiver votre VPN pour continuer.",
+  "errorApiSuspendedUser": "Votre compte a été suspendu.",
+
+  "login": "Connexion",
+  "loginTitle": "Bienvenue",
+  "loginSubtitle": "Connectez-vous à votre compte",
+  "logout": "Déconnexion",
+  "email": "Email",
+  "password": "Mot de passe",
+  "forgotPassword": "Mot de passe oublié ?",
+  "noAccount": "Pas encore de compte ?",
+  "register": "S'inscrire",
+
+  "home": "Accueil",
+  "profile": "Profil",
+  "welcomeUser": "Bienvenue, {username} !",
+  "@welcomeUser": {
+    "placeholders": {
+      "username": { "type": "String" }
+    }
+  },
+
+  "itemCount": "{count, plural, =0{Aucun élément} =1{1 élément} other{{count} éléments}}",
+  "@itemCount": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+name: Bump Build Number
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  bump:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Bump version
+        run: |
+          # Incrémente le build number dans pubspec.yaml
+          # Format: 1.0.0+1 → 1.0.0+2
+          sed -i 's/version: \([0-9]\+\.[0-9]\+\.[0-9]\+\)+\([0-9]\+\)/echo "version: \1+$((\2+1))"/e' pubspec.yaml
+
+      - name: Commit bump
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add pubspec.yaml
+          git commit -m "chore: bump build number [skip ci]" || exit 0
+          git push

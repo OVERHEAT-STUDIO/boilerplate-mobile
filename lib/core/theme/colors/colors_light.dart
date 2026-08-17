@@ -1,0 +1,90 @@
+import 'package:flutter/material.dart';
+import 'colors_abstract.dart';
+
+class ColorsLight extends ColorsAbstract {
+  ColorsLight._();
+  static final instance = ColorsLight._();
+
+  @override Color get iconErrorDefault => const Color(0xFFD32F2F);
+  @override Color get iconErrorTertiary => const Color(0x29D32F2F);
+  @override Color get iconErrorSecondary => const Color(0xFFEF5350);
+  @override Color get iconSecondaryDefault => const Color(0xFF757575);
+  @override Color get iconWarningDefault => const Color(0xFFFFA000);
+  @override Color get iconWarningTertiary => const Color(0x29FFA000);
+  @override Color get iconWarningSecondary => const Color(0xFFFFCA28);
+  @override Color get iconDefaultDefault => const Color(0xFF424242);
+  @override Color get iconDefaultTertiary => const Color(0x29424242);
+  @override Color get iconDefaultSecondary => const Color(0xFF757575);
+  @override Color get iconTertiaryDefault => const Color(0xFF212121);
+  @override Color get iconPrimaryDefault => const Color(0xFF3D6EE5);
+  @override Color get iconInfoDefault => const Color(0xFF1976D2);
+  @override Color get iconInfoTertiary => const Color(0x291976D2);
+  @override Color get iconInfoSecondary => const Color(0xFF42A5F5);
+
+  @override Color get backgroundErrorTertiary => const Color(0x1AD32F2F);
+  @override Color get backgroundErrorTransparent => const Color(0x0D000000);
+  @override Color get backgroundErrorDefault => const Color(0xFFFDE7E7);
+  @override Color get backgroundErrorSecondary => const Color(0xFFF5C6C6);
+  @override Color get backgroundSecondaryDefault => const Color(0xFFF5F5F5);
+  @override Color get backgroundSecondaryTertiary => const Color(0xFFEEEEEE);
+  @override Color get backgroundSecondarySecondary => const Color(0xFFE0E0E0);
+  @override Color get backgroundWarningTertiary => const Color(0x1AFFA000);
+  @override Color get backgroundWarningTransparent => const Color(0x0DFFA000);
+  @override Color get backgroundWarningDefault => const Color(0xFFFFF8E1);
+  @override Color get backgroundWarningSecondary => const Color(0xFFFFECB3);
+  @override Color get backgroundDefaultDefault => const Color(0xFFF5F5F5);
+  @override Color get backgroundDefaultSecondary => const Color(0xFFFFFFFF);
+  @override Color get backgroundDefaultTertiary => const Color(0xFFEEEEEE);
+  @override Color get backgroundTertiaryDefault => const Color(0xFFE0E0E0);
+  @override Color get backgroundTertiaryTertiary => const Color(0xFFBDBDBD);
+  @override Color get backgroundTertiarySecondary => const Color(0xFF9E9E9E);
+  @override Color get backgroundPrimaryDefault => const Color(0xFF3D6EE5);
+  @override Color get backgroundPrimaryTertiary => const Color(0x1A3D6EE5);
+  @override Color get backgroundPrimarySecondary => const Color(0xFF5C8AFF);
+  @override Color get backgroundInfoTertiary => const Color(0x1A1976D2);
+  @override Color get backgroundInfoTransparent => const Color(0x0D1976D2);
+  @override Color get backgroundInfoDefault => const Color(0xFFE3F2FD);
+  @override Color get backgroundInfoSecondary => const Color(0xFFBBDEFB);
+
+  @override Color get textErrorDefault => const Color(0xFFD32F2F);
+  @override Color get textErrorTertiary => const Color(0x61D32F2F);
+  @override Color get textErrorSecondary => const Color(0xFFEF5350);
+  @override Color get textSecondaryDefault => const Color(0xFF757575);
+  @override Color get textWarningDefault => const Color(0xFFFFA000);
+  @override Color get textWarningTertiary => const Color(0x61FFA000);
+  @override Color get textWarningSecondary => const Color(0xFFFFCA28);
+  @override Color get textDefaultDefault => const Color(0xFF1A1A2E);
+  @override Color get textDefaultTertiary => const Color(0x611A1A2E);
+  @override Color get textDefaultSecondary => const Color(0xFF616161);
+  @override Color get textTertiaryDefault => const Color(0xFF212121);
+  @override Color get textPrimaryDefault => const Color(0xFF3D6EE5);
+  @override Color get textInfoDefault => const Color(0xFF1976D2);
+  @override Color get textInfoTertiary => const Color(0x611976D2);
+  @override Color get textInfoSecondary => const Color(0xFF42A5F5);
+
+  @override Color get utilitiesOs => const Color(0xFFE8E8E8);
+  @override Color get utilitiesOsText => const Color(0xFF1A1A2E);
+  @override Color get utilitiesShadow => const Color(0x1A000000);
+
+  @override Color get borderErrorDefault => const Color(0xFFD32F2F);
+  @override Color get borderErrorTertiary => const Color(0x29D32F2F);
+  @override Color get borderErrorSecondary => const Color(0xFFEF5350);
+  @override Color get borderSecondaryDefault => const Color(0xFFE0E0E0);
+  @override Color get borderSecondaryTertiary => const Color(0xFFBDBDBD);
+  @override Color get borderSecondarySecondary => const Color(0xFF9E9E9E);
+  @override Color get borderWarningDefault => const Color(0xFFFFA000);
+  @override Color get borderWarningTertiary => const Color(0x29FFA000);
+  @override Color get borderWarningSecondary => const Color(0xFFFFCA28);
+  @override Color get borderDefaultDefault => const Color(0xFFE0E0E0);
+  @override Color get borderDefaultTertiary => const Color(0xFFBDBDBD);
+  @override Color get borderDefaultSecondary => const Color(0xFF9E9E9E);
+  @override Color get borderTertiaryDefault => const Color(0xFFBDBDBD);
+  @override Color get borderTertiaryTertiary => const Color(0xFF9E9E9E);
+  @override Color get borderTertiarySecondary => const Color(0xFF757575);
+  @override Color get borderPrimaryDefault => const Color(0xFF3D6EE5);
+  @override Color get borderPrimaryTertiary => const Color(0x293D6EE5);
+  @override Color get borderPrimarySecondary => const Color(0xFF5C8AFF);
+  @override Color get borderInfoDefault => const Color(0xFF1976D2);
+  @override Color get borderInfoTertiary => const Color(0x291976D2);
+  @override Color get borderInfoSecondary => const Color(0xFF42A5F5);
+}
