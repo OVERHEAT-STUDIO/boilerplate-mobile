@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 /// Gestion globale des erreurs applicatives
 class ErrorsManager {
   ErrorsManager._();

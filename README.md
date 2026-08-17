@@ -3,6 +3,14 @@
 > Template officiel pour toutes les applications Flutter d'Overheat Studio.
 > Architecture **feature-first**, **Riverpod**, **GoRouter**, **Freezed**, **Dio**, **i18n**, thème adaptatif et responsive.
 
+> **État** : projet validé avec Flutter 3.47.0 (stable) — `flutter pub get`,
+> `dart run build_runner build`, `flutter analyze` (0 erreur) et
+> `flutter test` passent tous. Les dossiers `android/` et `ios/` sont générés
+> et committés ; les polices Nunito et JetBrains Mono incluses dans
+> `assets/fonts/` sont sous licence OFL (voir les fichiers `*-OFL.txt` à
+> côté). La police "Newake" n'est pas fournie (licence non libre) — ajoutez
+> le `.ttf` de votre projet si besoin.
+
 ---
 
 ## ✨ Stack

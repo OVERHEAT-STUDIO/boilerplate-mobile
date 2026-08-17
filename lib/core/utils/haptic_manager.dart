@@ -4,7 +4,7 @@ class HapticManager {
   HapticManager._();
   static final instance = HapticManager._();
 
-  Future<bool> _isSupported = Vibration.hasVibrator() ?? Future.value(false);
+  final Future<bool> _isSupported = Vibration.hasVibrator();
   bool _useHaptics = true;
 
   Future<void> loadUseHaptics() async {
