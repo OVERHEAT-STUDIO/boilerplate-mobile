@@ -70,6 +70,7 @@ my_app/
 │   │   ├── config/             #   Flags, constantes app
 │   │   ├── constants/          #   Breakpoints
 │   │   ├── errors/             #   ApiErrorMapper, ErrorsManager
+│   │   ├── extensions/         #   ColorExtensions (Color.applyOpacity)
 │   │   ├── local_storage/      #   LocalStorageManager (secure storage)
 │   │   ├── localization/       #   AppLocalizationNotifier
 │   │   ├── navigation/         #   Route observer
