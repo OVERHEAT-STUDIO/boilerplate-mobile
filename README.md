@@ -33,19 +33,29 @@
 ## 🚀 Démarrage rapide
 
 ```bash
-# 1. Remplacer le nom du projet
-#    - pubspec.yaml → name
-#    - Android : android/app/build.gradle → applicationId + android/app/src/main/AndroidManifest.xml
-#    - iOS : ios/Runner.xcodeproj → Bundle Identifier
-#    - ios/Runner/Info.plist → display name
+# Renomme l'identifiant d'app (Android + iOS) et le nom affiché, puis
+# génère l'i18n et les fichiers Riverpod/Freezed.
+./scripts/setup.sh "com.example.myapp" "MyApp"
+```
 
-# 2. Générer les fichiers i18n
+`scripts/setup.sh` ne renomme **pas** le `name:` de `pubspec.yaml` (le nom du
+package Dart, utilisé dans tous les imports `package:my_app/...`) : le
+changer implique de réécrire les imports dans tout `lib/` et `test/`, ce qui
+dépasse le cadre d'un renommage d'identité d'app. Voir les commentaires en
+tête du script pour le détail.
+
+Équivalent manuel, si vous préférez ne pas renommer l'identifiant :
+
+```bash
+# Générer les fichiers i18n
 cd i18n && dart run intl_utils:generate && cd ..
 
-# 3. Générer les fichiers Riverpod / Freezed
+# Générer les fichiers Riverpod / Freezed
 dart run build_runner build --delete-conflicting-outputs
+```
 
-# 4. Lancer
+```bash
+# Lancer
 flutter run --dart-define=API_APP_TOKEN=xxx
 ```
 
