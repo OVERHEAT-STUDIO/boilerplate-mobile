@@ -3,10 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:i18n/i18n.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
-import '../../../core/theme/theme_extensions.dart';
-import '../../../core/theme/border/border_radius.dart';
-import '../../../core/utils/responsive.dart';
-import '../controllers/auth_controller.dart';
+import '../../../../core/theme/theme_extensions.dart';
+import '../../../../core/utils/responsive.dart';
+import '../../../auth/presentation/controllers/auth_controller.dart';
 
 class HomePage extends ConsumerWidget {
   const HomePage({super.key});

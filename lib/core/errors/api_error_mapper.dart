@@ -1,5 +1,4 @@
 import 'package:i18n/i18n.dart';
-import '../api/api_exception.dart';
 
 class ApiErrorMapper {
   ApiErrorMapper._();

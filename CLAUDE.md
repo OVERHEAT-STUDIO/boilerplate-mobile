@@ -53,6 +53,7 @@ dart run build_runner watch --delete-conflicting-outputs
 context.colors              // → ColorsAbstract
 context.textStyles          // → AppTextStyles
 context.textStyles.base_b.withColor(context.colors.textDefaultDefault)
+context.colors.backgroundDefaultDefault.applyOpacity(0.5)  // core/extensions/color_extensions.dart
 ```
 
 ## Responsive

@@ -14,7 +14,6 @@ import 'package:timezone/data/latest.dart' as tz_data;
 import 'package:timezone/timezone.dart' as tz;
 
 import 'app.dart';
-import 'core/config/app_config.dart';
 import 'core/constants/breakpoints.dart';
 import 'core/utils/haptic_manager.dart';
 

@@ -144,6 +144,8 @@ lib/core/
 ├── errors/
 │   ├── api_error_mapper.dart     # errorCode → message i18n
 │   └── errors_manager.dart       # Gestion globale des erreurs
+├── extensions/
+│   └── color_extensions.dart     # Color.applyOpacity()
 ├── local_storage/
 │   └── local_storage_manager.dart
 ├── localization/
@@ -751,6 +753,24 @@ Le thème sélectioné par l'utilisateur est persisté automatiquement par `Adap
 AdaptiveTheme.of(context).setDark();
 AdaptiveTheme.of(context).setLight();
 AdaptiveTheme.of(context).setSystem();
+```
+
+### `ColorExtensions` — opacité sécurisée
+
+`lib/core/extensions/color_extensions.dart` ajoute `Color.applyOpacity()`, une alternative validée à `withValues(alpha: ...)` qui lève une `ArgumentError` si la valeur n'est pas comprise entre 0 et 1.
+
+```dart
+extension ColorExtensions on Color {
+  Color applyOpacity(double opacity) {
+    if (opacity < 0 || opacity > 1) {
+      throw ArgumentError('Opacity must be between 0 and 1');
+    }
+    return withValues(alpha: opacity);
+  }
+}
+
+// Usage
+context.colors.backgroundDefaultDefault.applyOpacity(0.5)
 ```
 
 ---

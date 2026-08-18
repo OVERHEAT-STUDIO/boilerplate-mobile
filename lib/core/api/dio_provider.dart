@@ -1,10 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import '../../features/auth/presentation/controllers/auth_controller.dart';
-import '../config/app_config.dart';
 import '../local_storage/local_storage_manager.dart';
 import 'api_exception.dart';
 

@@ -1,10 +1,9 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
 import 'core/navigation/app_route_observer.dart';
 import 'features/auth/presentation/controllers/auth_controller.dart';
+import 'features/auth/presentation/controllers/auth_state.dart';
 import 'features/auth/presentation/pages/login_page.dart';
 import 'features/home/presentation/pages/home_page.dart';
 import 'features/settings/presentation/pages/settings_page.dart';
@@ -47,8 +46,7 @@ GoRouter appRouter(Ref ref) {
 
 String? _redirect(Ref ref, GoRouterState state) {
   final auth = ref.read(authControllerProvider);
-  final isAuthenticated =
-      auth.valueOrNull?.status == AuthStatus.authenticated;
+  final isAuthenticated = auth.value?.status == AuthStatus.authenticated;
 
   if (state.matchedLocation == '/login' && isAuthenticated) {
     return '/home';
