@@ -34,6 +34,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "appearance": MessageLookupByLibrary.simpleMessage("Apparence"),
     "cancelLabel": MessageLookupByLibrary.simpleMessage("Annuler"),
     "close": MessageLookupByLibrary.simpleMessage("Fermer"),
+    "contactSupport": MessageLookupByLibrary.simpleMessage(
+      "Contacter le support",
+    ),
     "continueLabel": MessageLookupByLibrary.simpleMessage("Continuer"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "errorApiForbidden": MessageLookupByLibrary.simpleMessage("Accès refusé"),
@@ -78,6 +81,19 @@ class MessageLookup extends MessageLookupByLibrary {
     "noAccount": MessageLookupByLibrary.simpleMessage("Pas encore de compte ?"),
     "noResults": MessageLookupByLibrary.simpleMessage("Aucun résultat"),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+    "orLabel": MessageLookupByLibrary.simpleMessage("ou"),
+    "pageErrorCopyLogs": MessageLookupByLibrary.simpleMessage(
+      "Copier les logs",
+    ),
+    "pageErrorLogsCopied": MessageLookupByLibrary.simpleMessage(
+      "Logs copiés dans le presse-papier",
+    ),
+    "pageErrorSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Réessayez ou copiez les informations techniques pour nous aider à diagnostiquer le problème.",
+    ),
+    "pageErrorTitle": MessageLookupByLibrary.simpleMessage(
+      "Oups, une erreur est survenue",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("Mot de passe"),
     "profile": MessageLookupByLibrary.simpleMessage("Profil"),
     "rating": MessageLookupByLibrary.simpleMessage("Avis"),

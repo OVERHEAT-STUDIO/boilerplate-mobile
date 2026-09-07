@@ -36,4 +36,14 @@ class HapticManager {
     if (!_useHaptics) return;
     await Vibration.vibrate(pattern: [0, 40, 100, 60, 100, 40]);
   }
+
+  Future<void> selectionClick() async {
+    if (!_useHaptics) return;
+    await Vibration.vibrate(duration: 15, amplitude: 96);
+  }
+
+  Future<void> deny() async {
+    if (!_useHaptics) return;
+    await Vibration.vibrate(pattern: [0, 40, 60, 40, 60, 40]);
+  }
 }

@@ -342,6 +342,61 @@ class I18n {
       args: [count],
     );
   }
+
+  /// `ou`
+  String get orLabel {
+    return Intl.message('ou', name: 'orLabel', desc: '', args: []);
+  }
+
+  /// `Oups, une erreur est survenue`
+  String get pageErrorTitle {
+    return Intl.message(
+      'Oups, une erreur est survenue',
+      name: 'pageErrorTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Réessayez ou copiez les informations techniques pour nous aider à diagnostiquer le problème.`
+  String get pageErrorSubtitle {
+    return Intl.message(
+      'Réessayez ou copiez les informations techniques pour nous aider à diagnostiquer le problème.',
+      name: 'pageErrorSubtitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copier les logs`
+  String get pageErrorCopyLogs {
+    return Intl.message(
+      'Copier les logs',
+      name: 'pageErrorCopyLogs',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logs copiés dans le presse-papier`
+  String get pageErrorLogsCopied {
+    return Intl.message(
+      'Logs copiés dans le presse-papier',
+      name: 'pageErrorLogsCopied',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contacter le support`
+  String get contactSupport {
+    return Intl.message(
+      'Contacter le support',
+      name: 'contactSupport',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<I18n> {
