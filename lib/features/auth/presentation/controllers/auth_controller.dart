@@ -1,5 +1,9 @@
+import 'dart:async';
+
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
+import '../../../../core/analytics/analytics_events.dart';
+import '../../../../core/analytics/analytics_service.dart';
 import '../../../../core/api/api_exception.dart';
 import '../../../../core/errors/api_error_mapper.dart';
 import '../../../../core/local_storage/local_storage_manager.dart';
@@ -32,6 +36,12 @@ class AuthController extends _$AuthController {
           .read(localStorageManagerProvider)
           .write(key: tokenKey, value: token);
       state = const AsyncData(AuthState(status: AuthStatus.authenticated));
+      unawaited(
+        AnalyticsService.instance.capture(
+          AnalyticsEvents.userLoggedIn,
+          properties: {AnalyticsProperties.method: AnalyticsAuthMethod.password},
+        ),
+      );
     } on ApiException catch (e) {
       _setError(ApiErrorMapper.getMessage(e.apiErrorCode));
     } catch (_) {
@@ -42,6 +52,12 @@ class AuthController extends _$AuthController {
   Future<void> logout() async {
     await ref.read(localStorageManagerProvider).delete(key: tokenKey);
     state = AsyncData(AuthState(status: AuthStatus.unauthenticated));
+
+    // L'event doit partir tant que l'utilisateur est encore identifié, d'où le
+    // flush avant le reset qui repasse sur un distinct id anonyme.
+    await AnalyticsService.instance.capture(AnalyticsEvents.userLoggedOut);
+    await AnalyticsService.instance.flush();
+    await AnalyticsService.instance.reset();
   }
 
   void _setError(String? message) {

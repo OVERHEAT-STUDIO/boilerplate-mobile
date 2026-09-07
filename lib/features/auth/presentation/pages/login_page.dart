@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:i18n/i18n.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 
+import '../../../../core/interaction/interaction_scope.dart';
 import '../../../../core/theme/theme_extensions.dart';
 import '../../../../core/theme/border/border_radius.dart';
 import '../../../../core/utils/responsive.dart';
@@ -69,6 +70,7 @@ class LoginPage extends ConsumerWidget {
                       ),
                     ElevatedButton(
                       onPressed: () {
+                        InteractionScope.register(context, source: 'login_button');
                         ref
                             .read(authControllerProvider.notifier)
                             .login('demo', 'demo');

@@ -1,12 +1,20 @@
+import 'dart:async';
+
 import 'package:adaptive_theme/adaptive_theme.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:i18n/i18n.dart';
 
 import 'app_router.dart';
+import 'core/analytics/analytics_events.dart';
+import 'core/analytics/analytics_service.dart';
+import 'core/config/app_config.dart';
+import 'core/interaction/interaction_scope.dart';
 import 'core/localization/app_localization_helper.dart';
 import 'core/localization/app_localization_notifier.dart';
+import 'core/platform/system_bottom_inset.dart';
 import 'core/theme/app_theme.dart';
 import 'core/theme/colors/colors_dark.dart';
 import 'core/theme/colors/colors_light.dart';
@@ -58,9 +66,32 @@ class _MyAppState extends ConsumerState<MyApp> with WidgetsBindingObserver {
         darkTheme: dark,
         builder: (context, child) {
           context.initResponsive();
-          return child ?? const SizedBox.shrink();
+          return SystemBottomInset(
+            child: InteractionScope(
+              record: _recordInteraction,
+              child: child ?? const SizedBox.shrink(),
+            ),
+          );
         },
       ),
     );
   }
+}
+
+/// Callback par défaut de `InteractionScope` : remonte chaque tap enregistré
+/// à PostHog. À enrichir projet par projet (ex: total persisté, seuils de
+/// reward) via un controller Riverpod dédié.
+void _recordInteraction(int delta, {String? source}) {
+  if (delta <= 0) return;
+  if (AppConfig.interactionDebugLogs && kDebugMode) {
+    debugPrint('[Interaction] +$delta from ${source ?? 'unknown'}');
+  }
+  final properties = <String, Object?>{
+    AnalyticsProperties.source: source ?? 'unknown',
+    AnalyticsProperties.delta: delta,
+  };
+  unawaited(AnalyticsService.instance.capture(AnalyticsEvents.uiInteraction, properties: properties));
+  unawaited(
+    AnalyticsService.instance.addExceptionStep('interaction: ${source ?? 'unknown'}', properties: properties),
+  );
 }
