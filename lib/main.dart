@@ -14,12 +14,16 @@ import 'package:timezone/data/latest.dart' as tz_data;
 import 'package:timezone/timezone.dart' as tz;
 
 import 'app.dart';
+import 'core/analytics/analytics_service.dart';
 import 'core/constants/breakpoints.dart';
 import 'core/utils/haptic_manager.dart';
 
 Future<void> main() async {
   final binding = WidgetsFlutterBinding.ensureInitialized();
   FlutterNativeSplash.preserve(widgetsBinding: binding);
+
+  // No-op tant que AppConfig.posthogProjectToken est vide.
+  await AnalyticsService.instance.initialize();
 
   _initIsTablet();                           // 1. Détection tablette (avant tout)
   await HapticManager.instance.loadUseHaptics();

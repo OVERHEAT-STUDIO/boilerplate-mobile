@@ -33,6 +33,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "appearance": MessageLookupByLibrary.simpleMessage("Appearance"),
     "cancelLabel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "close": MessageLookupByLibrary.simpleMessage("Close"),
+    "contactSupport": MessageLookupByLibrary.simpleMessage("Contact support"),
     "continueLabel": MessageLookupByLibrary.simpleMessage("Continue"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "errorApiForbidden": MessageLookupByLibrary.simpleMessage("Access denied"),
@@ -73,6 +74,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "noAccount": MessageLookupByLibrary.simpleMessage("No account yet?"),
     "noResults": MessageLookupByLibrary.simpleMessage("No results"),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
+    "orLabel": MessageLookupByLibrary.simpleMessage("or"),
+    "pageErrorCopyLogs": MessageLookupByLibrary.simpleMessage("Copy logs"),
+    "pageErrorLogsCopied": MessageLookupByLibrary.simpleMessage(
+      "Logs copied to clipboard",
+    ),
+    "pageErrorSubtitle": MessageLookupByLibrary.simpleMessage(
+      "Try again or copy the technical details to help us diagnose the issue.",
+    ),
+    "pageErrorTitle": MessageLookupByLibrary.simpleMessage(
+      "Oops, something went wrong",
+    ),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "profile": MessageLookupByLibrary.simpleMessage("Profile"),
     "rating": MessageLookupByLibrary.simpleMessage("Rating"),

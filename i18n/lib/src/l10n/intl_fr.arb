@@ -53,5 +53,12 @@
     "placeholders": {
       "count": { "type": "int" }
     }
-  }
+  },
+
+  "orLabel": "ou",
+  "pageErrorTitle": "Oups, une erreur est survenue",
+  "pageErrorSubtitle": "Réessayez ou copiez les informations techniques pour nous aider à diagnostiquer le problème.",
+  "pageErrorCopyLogs": "Copier les logs",
+  "pageErrorLogsCopied": "Logs copiés dans le presse-papier",
+  "contactSupport": "Contacter le support"
 }
